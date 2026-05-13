@@ -20,12 +20,12 @@ def get_input():
 def guessed_the_letter():
     return guess in word      
 
-def update_hidden_word(word,hidden_word,letter):
+def update_hidden_word(word, hidden_word, letter):
     """function updates if new letter was guessed and print the up to date hidden word"""
     letter_occurence = word.count(letter)
     temp = 0
     while letter_occurence:
-        letter_index = word.index(letter,temp)
+        letter_index = word.index(letter, temp)
         hidden_word[letter_index] = letter
         temp = letter_index + 1
         letter_occurence -= 1
@@ -34,9 +34,9 @@ def guessed_the_word():
     return "".join(hidden_word) == word  
         
 
-def update_letters(letters,letter):
-    """fucntion makes any slected letter red"""
-    letters[letters.index(letter)] = f"\033[31m{letter.title()}\033[0m"
+def update_letters(letters, letter):
+    """fucntion makes any selected letter red"""
+    letters[letters.index(letter)] = f"\033[31m{letter}\033[0m"
     return 
 
 word_bank = [
